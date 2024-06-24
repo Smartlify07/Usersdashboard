@@ -2,7 +2,7 @@
 import useAuth from "../../hooks/useAuth";
 import { RxCaretDown } from "react-icons/rx";
 
-const UserProfile = ({ collapse }) => {
+const UserProfile = ({ isCollapsed }) => {
   const { user } = useAuth();
 
   return (
@@ -10,14 +10,14 @@ const UserProfile = ({ collapse }) => {
       <img
         src="../images/userimg.svg"
         className={`w-12 h-12   ${
-          collapse ? `lg:w-14 lg:h-14` : `lg:w-12 lg:h-12`
+          isCollapsed ? `lg:w-14 lg:h-14` : `lg:w-12 lg:h-12`
         } `}
         alt="avatar"
       />
 
       <div
         className={`hidden items-center lg:w-full justify-between ${
-          collapse && `lg:hidden`
+          isCollapsed && `lg:hidden`
         } lg:flex`}
       >
         <div className="flex flex-col">

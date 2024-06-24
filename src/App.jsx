@@ -11,6 +11,7 @@ import Login from "./routes/Login";
 import DashboardLayout from "./layout/DashboardLayout";
 import CustomersPage from "./routes/CustomersPage";
 import NotFound from "./routes/NotFound";
+import { CollapseProvider } from "./Context/CollapseProvider";
 
 function App() {
   const router = createBrowserRouter(
@@ -27,9 +28,11 @@ function App() {
     )
   );
   return (
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <CollapseProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </CollapseProvider>
   );
 }
 

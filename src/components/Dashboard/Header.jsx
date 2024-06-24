@@ -1,11 +1,14 @@
 import { BiSearch } from "react-icons/bi";
 import useAuth from "../../hooks/useAuth";
+import useCollapse from "../../hooks/useCollapse";
 
 const Header = () => {
   const { user } = useAuth();
+  const { isCollapsed, setIsCollapsed } = useCollapse();
+
   return (
-    <header className="py-10 flex items-center w-10/12 md:w-11/12 lg:w-11/12">
-      <div className="flex flex-col w-full md:flex-row gap-4  md:justify-between md:items-center">
+    <header className="py-10 flex  w-10/12 md:w-11/12 lg:w-11/12">
+      <div className="flex flex-col w-full md:flex-row gap-4 md:justify-between md:items-center">
         <h1 className="text-2xl font-semibold lg:text-3xl">
           Hello {user.displayName}👋🏼,
         </h1>
@@ -20,7 +23,12 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-1 md:hidden">
+      <div
+        className="flex flex-col gap-1 md:hidden"
+        onClick={() => {
+          setIsCollapsed(!isCollapsed);
+        }}
+      >
         <span className="w-6 h-[0.2rem] bg-primary rounded-md"></span>
         <span className="w-6 h-[0.2rem] bg-primary rounded-md"></span>
         <span className="w-6 h-[0.2rem] bg-primary rounded-md"></span>

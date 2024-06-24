@@ -5,11 +5,11 @@ import UsersList from "../components/Dashboard/UsersList";
 
 const CustomersPage = () => {
   return (
-    <main className="flex flex-col py-2 pb-6 overflow-x-hidden  items-center md:w-11/12 lg:pb-14 lg:w-full">
+    <main className="flex flex-col py-2 pb-6 overflow-x-hidden items-center md:w-11/12 lg:pb-14 lg:w-full">
       <Header />
       <Stats />
 
-      <section className="bg-white px-5 transition-all flex py-4 flex-col drop-shadow-lightblue shadow-md mt-7 rounded-xl md:w-11/12 lg:w-11/12">
+      <section className="bg-white px-5 transition-all flex py-4 flex-col mt-7 rounded-xl md:drop-shadow-lightblue md:shadow-md md:w-11/12 lg:w-11/12">
         <UserFilterPanel />
         <UsersList />
 

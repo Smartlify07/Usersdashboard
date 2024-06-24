@@ -3,8 +3,8 @@ import Sidebar from "../components/Dashboard/Sidebar";
 import useAuth from "../hooks/useAuth";
 
 const DashboardLayout = () => {
-  const { user, loading } = useAuth();
-  console.log(user);
+  const { loading } = useAuth();
+
   if (!loading) {
     return (
       <section className="flex font-poppins">

@@ -1,15 +1,19 @@
+/* eslint-disable react/prop-types */
 import Subscribe from "./Subscribe";
 import UserProfile from "./UserProfile";
 import NavLinks from "./NavLinks";
-import { useState } from "react";
-import { FaHamburger } from "react-icons/fa";
+import useCollapse from "../../hooks/useCollapse";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const Sidebar = () => {
-  const [collapse, setCollapse] = useState(true);
+  const { isCollapsed, setIsCollapsed } = useCollapse();
+
   return (
     <aside
-      className={`bg-white transition-all drop-shadow-lightblue min-h-screen w-0 overflow-hidden  pt-14 pb-5  flex flex-col justify-between border-black items-center md:w-1/12 lg:px-3 xl:px-4 ${
-        collapse && `lg:w-1/12 xl:w-1/12`
+      className={`bg-white relative transition-all drop-shadow-lightblue z-40 shadow-lg min-h-screen  ${
+        isCollapsed ? `w-1/2 border` : `w-0`
+      } overflow-hidden l pt-14 pb-5  flex flex-col justify-between  items-center md:w-1/12 lg:px-3 lg:overflow-visible lg:z-auto xl:px-4 ${
+        isCollapsed && `lg:w-1/12 xl:w-1/12`
       } lg:w-1/4 xl:w-1/4`}
     >
       <div className="">
@@ -17,7 +21,7 @@ const Sidebar = () => {
           <img src="../images/logo.svg" className="w-8 lg:w-7" alt="logo" />
           <h1
             className={`hidden  text-black text-xl font-semibold ${
-              collapse && `lg:hidden`
+              isCollapsed && `lg:hidden`
             } lg:block lg:text-2xl`}
           >
             Dashboard
@@ -26,11 +30,22 @@ const Sidebar = () => {
             </sub>
           </h1>
         </header>
-        <NavLinks collapse={collapse} />
+        <NavLinks isCollapsed={isCollapsed} />
       </div>
 
-      <Subscribe collapse={collapse} />
-      <UserProfile collapse={collapse} />
+      <Subscribe isCollapsed={isCollapsed} />
+      <UserProfile isCollapsed={isCollapsed} />
+
+      <button
+        onClick={() => setIsCollapsed(!isCollapsed)}
+        className="hidden w-7 h-7 bg-primary opacity-90 text-white text-2xl rounded-full border  items-center justify-center absolute transition-all top-[10rem] -right-4   lg:flex "
+      >
+        {!isCollapsed ? (
+          <FaAngleLeft className="text-white" />
+        ) : (
+          <FaAngleRight className="text-white" />
+        )}
+      </button>
     </aside>
   );
 };

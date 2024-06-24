@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { NavLink } from "react-router-dom";
 
-const NavLinks = ({ collapse }) => {
+const NavLinks = ({ isCollapsed }) => {
   const navLinks = [
     {
       linkName: "dashboard",
@@ -63,7 +63,7 @@ const NavLinks = ({ collapse }) => {
               alt={to}
             />
             {
-              <p className={`hidden ${collapse ? `lg:hidden` : `lg:block`}`}>
+              <p className={`hidden ${isCollapsed ? `lg:hidden` : `lg:block`}`}>
                 {linkName}
               </p>
             }
@@ -76,8 +76,8 @@ const NavLinks = ({ collapse }) => {
   return (
     <ul className="py-8">
       <div
-        className={`flex flex-col items-center gap-10 ${
-          collapse && `lg:items-center`
+        className={`flex mt-5 flex-col items-center gap-10 ${
+          isCollapsed && `lg:items-center`
         } lg:items-start`}
       >
         {navLinks.map((item) => (
