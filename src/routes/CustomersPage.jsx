@@ -5,15 +5,15 @@ import UsersList from "../components/Dashboard/UsersList";
 
 const CustomersPage = () => {
   return (
-    <main className="flex flex-col items-center md:w-11/12 lg:w-full">
+    <main className="flex flex-col py-2 pb-6 overflow-x-hidden  items-center md:w-11/12 lg:pb-14 lg:w-full">
       <Header />
       <Stats />
 
-      <section className="bg-white flex flex-col drop-shadow-lg mt-7 rounded-xl md:w-11/12 lg:w-11/12">
+      <section className="bg-white px-5 transition-all flex py-4 flex-col drop-shadow-lightblue shadow-md mt-7 rounded-xl md:w-11/12 lg:w-11/12">
         <UserFilterPanel />
         <UsersList />
 
-        <section className="flex  self-center py-6 justify-between items-center lg:w-10/12">
+        <section className="flex flex-col  self-center gap-4 py-6 justify-between items-center  lg:flex-row  lg:w-10/12 xl:w-10/12">
           <p className="text-[#B5B7C0]">Showing data 1 of 8</p>
 
           <div className="flex gap-4 items-center">

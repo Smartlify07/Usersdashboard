@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { NavLink } from "react-router-dom";
 
-const NavLinks = ({ open }) => {
+const NavLinks = ({ collapse }) => {
   const navLinks = [
     {
       linkName: "dashboard",
@@ -45,7 +46,7 @@ const NavLinks = ({ open }) => {
         to={"" + to}
         end
         className={({ isActive }) =>
-          `text-[#9197b3] px-3 flex justify-center   transition-all gap-3 items-center capitalize lg:w-full lg:justify-normal lg:px-4 ${
+          `text-[#9197b3] px-3 flex justify-center transition-all gap-3 items-center capitalize  lg:justify-normal lg:w-full lg:px-4 ${
             isActive ? "bg-primary rounded-md py-3 text-white" : ""
           }`
         }
@@ -57,11 +58,15 @@ const NavLinks = ({ open }) => {
             }`}
           >
             <img
-              className=" lg:w-7"
+              className="lg:w-7"
               src={isActive ? whiteImg : darkImg}
               alt={to}
             />
-            {<p className="hidden lg:block">{linkName}</p>}
+            {
+              <p className={`hidden ${collapse ? `lg:hidden` : `lg:block`}`}>
+                {linkName}
+              </p>
+            }
           </div>
         )}
       </NavLink>
@@ -70,7 +75,11 @@ const NavLinks = ({ open }) => {
 
   return (
     <ul className="py-8">
-      <div className="flex flex-col items-center gap-10 lg:items-start">
+      <div
+        className={`flex flex-col items-center gap-10 ${
+          collapse && `lg:items-center`
+        } lg:items-start`}
+      >
         {navLinks.map((item) => (
           <NavItem key={item.to} {...item} />
         ))}
