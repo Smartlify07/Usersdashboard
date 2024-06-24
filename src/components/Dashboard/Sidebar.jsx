@@ -1,30 +1,36 @@
 import Subscribe from "./Subscribe";
 import UserProfile from "./UserProfile";
-import Navbar from "./NavLinks";
+import NavLinks from "./NavLinks";
+import { useState } from "react";
+import { FaHamburger } from "react-icons/fa";
 
 const Sidebar = () => {
+  const [collapse, setCollapse] = useState(true);
   return (
     <aside
-      role="sidebar"
-      className="bg-white h-full min-h-screen drop-shadow-lightblue transition-all   overflow-hidden lg:block lg:w-1/3"
+      className={`bg-white transition-all drop-shadow-lightblue min-h-screen w-0 overflow-hidden  pt-14 pb-5  flex flex-col justify-between border-black items-center md:w-1/12 lg:px-3 xl:px-4 ${
+        collapse && `lg:w-1/12 xl:w-1/12`
+      } lg:w-1/4 xl:w-1/4`}
     >
-      <div className="py-6 px-3 h-full flex flex-col justify-between lg:px-7">
-        <header className="flex items-center gap-2 py-5">
-          <img src="../images/logo.svg" className="md:w-14 lg:w-9" alt="logo" />
-          <h1 className="hidden text-black text-xl font-semibold lg:block lg:text-2xl">
+      <div className="">
+        <header className="flex items-center justify-center self-center gap-1 w-full">
+          <img src="../images/logo.svg" className="w-8 lg:w-7" alt="logo" />
+          <h1
+            className={`hidden  text-black text-xl font-semibold ${
+              collapse && `lg:hidden`
+            } lg:block lg:text-2xl`}
+          >
             Dashboard
             <sub className="text-sm ml-1 text-light text-[#838383] inline">
               v.01
             </sub>
           </h1>
         </header>
-        <Navbar />
+        <NavLinks collapse={collapse} />
       </div>
 
-      <div className="flex flex-col items-center  w-full">
-        {<Subscribe />}
-        <UserProfile />
-      </div>
+      <Subscribe collapse={collapse} />
+      <UserProfile collapse={collapse} />
     </aside>
   );
 };

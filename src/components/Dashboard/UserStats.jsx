@@ -4,12 +4,12 @@ import { dashboardData } from "../../data/dashboardData";
 const UserStats = () => {
   const data = dashboardData;
   return (
-    <section className="bg-white rounded-lg py-4 px-8 flex flex-col gap-5  items-center justify-between w-2/3   drop-shadow-lightblue md:w-11/12 md:flex-row lg:w-11/12">
-      <div className="flex items-center  gap-4">
-        <div className="w-10 h-10 bg-[#D3FFE7] flex items-center justify-center rounded-full md:w-14 md:h-14 lg:w-20 lg:h-20">
+    <section className="bg-white rounded-lg py-7 px-8 flex flex-col gap-6  items-center justify-between w-11/12  drop-shadow-lightblue md:w-11/12 md:flex-row lg:w-11/12">
+      <div className="flex items-center gap-6 w-full justify-around lg:w-auto lg:justify-normal">
+        <div className="w-14 h-14 bg-[#D3FFE7] flex items-center justify-center rounded-full md:w-14 md:h-14 lg:w-20 lg:h-20">
           <img
             src="../images/profile-2user.svg"
-            className="w-6 h-6 lg:w-10 lg:h-10"
+            className="w-8 h-8 lg:w-10 lg:h-10"
             alt=""
           />
         </div>
@@ -28,11 +28,11 @@ const UserStats = () => {
           </p>
         </div>
       </div>
-      <div className="flex items-center gap-4">
-        <div className=" w-10 h-10 flex items-center justify-center bg-[#D3FFE7] rounded-full md:w-14 md:h-14 lg:w-20 lg:h-20">
+      <div className="flex items-center gap-6 w-full justify-around lg:w-auto lg:justify-normal">
+        <div className=" w-14 h-14 flex items-center justify-center bg-[#D3FFE7] rounded-full md:w-14 md:h-14 lg:w-20 lg:h-20">
           <img
             src="../images/profile-tick.svg"
-            className="w-6 h-6 lg:w-10 lg:h-10"
+            className="w-8 h-8 lg:w-10 lg:h-10"
             alt=""
           />
         </div>
@@ -49,11 +49,11 @@ const UserStats = () => {
           </p>
         </div>
       </div>
-      <div className="flex items-center gap-4">
-        <div className="w-10 h-10 bg-[#D3FFE7] flex items-center justify-center rounded-full md:w-14 md:h-14 lg:w-20 lg:h-20">
+      <div className="flex items-center gap-6 w-full justify-around lg:w-auto lg:justify-normal">
+        <div className="w-14 h-14 bg-[#D3FFE7] flex items-center justify-center rounded-full md:w-14 md:h-14 lg:w-20 lg:h-20">
           <img
             src="../images/monitor.svg"
-            className="w-6 h-6 lg:w-10 lg:h-10"
+            className="w-8 h-8 lg:w-10 lg:h-10"
             alt=""
           />
         </div>

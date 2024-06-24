@@ -1,20 +1,25 @@
+/* eslint-disable react/prop-types */
 import useAuth from "../../hooks/useAuth";
 import { RxCaretDown } from "react-icons/rx";
 
-const UserProfile = () => {
+const UserProfile = ({ collapse }) => {
   const { user } = useAuth();
 
   return (
-    <div className="w-full py-4 px-6 my-8 flex border justify-center items-center gap-4">
-      <div className="rounded-full flex items-center justify-center">
-        <img
-          src="../images/userimg.svg"
-          className="w-10 h-10 lg:w-10 lg:h-10"
-          alt="avatar"
-        />
-      </div>
+    <div className="w-full py-4 my-8 flex flex-col  justify-center items-center gap-4 xl:flex-row">
+      <img
+        src="../images/userimg.svg"
+        className={`w-12 h-12   ${
+          collapse ? `lg:w-14 lg:h-14` : `lg:w-12 lg:h-12`
+        } `}
+        alt="avatar"
+      />
 
-      <div className="hidden items-center lg:w-full justify-between lg:flex">
+      <div
+        className={`hidden items-center lg:w-full justify-between ${
+          collapse && `lg:hidden`
+        } lg:flex`}
+      >
         <div className="flex flex-col">
           <h3 className=" text-black text-lg font-semibold lg:block">
             {user.displayName}

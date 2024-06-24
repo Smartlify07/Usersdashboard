@@ -1,6 +1,5 @@
 import { Field, Form, Formik } from "formik";
 import { BiSearch } from "react-icons/bi";
-import TextInput from "../TextInput";
 import { usersData } from "../../data/usersData";
 
 const UserFilterPanel = () => {
@@ -12,10 +11,10 @@ const UserFilterPanel = () => {
   };
   return (
     <section
-      className="w-full py-5 px-8 flex flex-col gap-4 items-center justify-between lg:flex-row"
+      className="py-5 px-8 flex flex-col gap-4 items-center justify-between lg:flex-row"
       role="filter"
     >
-      <header className="flex flex-col gap-2">
+      <header className="flex flex-col gap-1">
         <h1 className="text-[#333] text-2xl lg:text-[22px] font-semibold">
           All Customers
         </h1>

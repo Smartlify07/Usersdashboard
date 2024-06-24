@@ -2,9 +2,9 @@ import { usersData } from "../../data/usersData";
 
 const UsersList = () => {
   return (
-    <section className="px-4 pb-5 border-b">
-      <div className="relative overflow-x-auto">
-        <table className="w-full text-sm text-left rtl:text-right ">
+    <section className="pb-5 flex justify-center border-b">
+      <div className="relative w-7/12 overflow-scroll md:w-full md:overflow-auto lg:overflow-auto lg:w-full">
+        <table className="w-full text-sm text-left rtl:text-right overflow-scroll ">
           <thead className="text-sm text-center font-normal text-[#b5b7c0]">
             <tr>
               <th scope="col" className="font-normal px-6 py-3">
@@ -32,23 +32,25 @@ const UsersList = () => {
               <tr className="bg-white border-b  text-center" key={user.email}>
                 <th
                   scope="row"
-                  className="px-1 py-5 font-medium text-sm  whitespace-nowrap "
+                  className="px-1 py-5 font-medium text-xs  whitespace-nowrap lg:text-sm "
                 >
                   {user.customerName}
                 </th>
-                <td className="px-1 py-5 text-sm font-medium">
+                <td className="px-1 py-5 text-xs font- medium lg:text-sm">
                   {user.company}
                 </td>
-                <td className="px-1 py-5 text-sm font-medium">
+                <td className="px-1 py-5 text-xs font- medium lg:text-sm">
                   {user.phoneNumber}
                 </td>
-                <td className="px-1 py-5 text-sm font-medium">{user.email}</td>
-                <td className="px-1 py-5 text-sm font-medium">
+                <td className="px-1 py-5 text-xs font- medium lg:text-sm">
+                  {user.email}
+                </td>
+                <td className="px-1 py-5 text-xs font- medium lg:text-sm">
                   {user.country}
                 </td>
-                <td className={`px-1 py-5 text-sm  `}>
+                <td className={`px-1 py-5   `}>
                   <span
-                    className={`py-1 px-3 w-full rounded-sm 
+                    className={`py-1 px-3 w-full text-xs rounded-sm lg:text-sm
                     ${
                       user.status === "Active"
                         ? `bg-[rgba(22,192,152,0.38)] border text-[#008767] border-[#008767]`

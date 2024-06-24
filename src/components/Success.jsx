@@ -13,7 +13,7 @@ const Success = () => {
         </h1>
 
         <Link
-          to={"/dashboard/customers"}
+          to={"login"}
           className="bg-primary text-white font-semibold flex items-center justify-center py-4 rounded-lg "
         >
           Go to Login
