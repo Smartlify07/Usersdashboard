@@ -24,7 +24,7 @@ const Header = () => {
       </div>
 
       <div
-        className="flex flex-col gap-1 md:hidden"
+        className="cursor-pointer flex flex-col gap-1 md:hidden"
         onClick={() => {
           setIsCollapsed(!isCollapsed);
         }}

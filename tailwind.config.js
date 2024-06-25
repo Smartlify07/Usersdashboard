@@ -1,6 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  purge: {
+    content: ["./src/**/*.{js,jsx,ts,tsx,html}"],
+    safelist: [
+      "transition-all",
+      "duration-300",
+      "ease-in-out", // Add any other classes you use for transitions
+    ],
+  },
+
   theme: {
     extend: {
       fontFamily: {
