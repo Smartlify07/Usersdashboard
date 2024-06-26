@@ -10,10 +10,10 @@ const Sidebar = () => {
 
   return (
     <aside
-      className={`bg-white relative transition-all duration-300 drop-shadow-lightblue z-40 shadow-lg min-h-screen flex flex-col justify-between items-center overflow-hidden pt-14 pb-5
-        md:w-1/12 lg:px-3 lg:overflow-visible lg:z-auto xl:px-4 lg:w-1/4 ${
-          isCollapsed ? "w-1/2 lg:w-1/12" : "w-0"
-        } `}
+      className={` transform lg:w-1/4 ${
+        isCollapsed ? "w-1/2 lg:w-1/12" : "w-0"
+      } bg-white transition-all duration-300 relative drop-shadow-lightblue z-40 shadow-lg min-h-screen flex flex-col justify-between items-center overflow-hidden pt-14 pb-5
+        md:w-1/12 lg:px-3 lg:overflow-visible lg:z-auto xl:px-4  `}
     >
       <div>
         <header className="flex items-center justify-center self-center gap-1 w-full">
