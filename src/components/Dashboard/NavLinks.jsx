@@ -46,7 +46,7 @@ const NavLinks = ({ isCollapsed }) => {
         to={"" + to}
         end
         className={({ isActive }) =>
-          `text-[#9197b3] px-3 flex justify-center  gap-3 items-center capitalize  lg:justify-normal lg:w-full lg:px-4 ${
+          `text-[#9197b3] px-3 flex justify-center transition-all delay-75 gap-3 items-center capitalize  lg:justify-normal lg:w-full lg:px-4 ${
             isActive ? "bg-primary rounded-md py-3 text-white" : ""
           }`
         }
